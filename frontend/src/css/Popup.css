@@ -1,0 +1,408 @@
+/* Overlay Background */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Popup Box */
+.popup-content {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(240, 248, 255, 0.95));
+  border-radius: 20px;
+  padding: 25px;
+  width: 98%;
+  max-width: 1400px;
+  max-height: 95vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(76, 175, 80, 0.2);
+  overflow: hidden;
+  animation: slideUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Popup Header */
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0;
+  border-bottom: 3px solid #4CAF50;
+  font-size: 20px;
+  font-weight: 800;
+  color: #2c3e50;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #4CAF50, #66BB6A);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Tree Icon */
+.tree-icon {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+/* Close Button */
+.close-button {
+  background: #f60303; /* Solid white background */
+  border: 2px solid #060606; /* Red-orange border */
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(193, 27, 27, 0.4);
+  position: relative; /* For pseudo-element positioning */
+}
+
+.close-button::before {
+  content: "\00D7"; /* Unicode for "×" */
+  color: #ff4b2b; /* Red-orange text */
+  font-size: 24px; /* Larger for visibility */
+  font-weight: 900; /* Bold */
+  font-family: Arial, sans-serif; /* Reliable font */
+  line-height: 1; /* Center vertically */
+  position: absolute;
+}
+
+.close-button:hover {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b); /* Gradient on hover */
+  border-color: #fff; /* White border */
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(255, 75, 43, 0.6);
+}
+
+.close-button:hover::before {
+  color: #fff; /* White text on hover */
+}
+/* Filter Container */
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  margin: 0;
+  flex-wrap: wrap;
+  background: rgba(253, 250, 250, 0.8);
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Search Container */
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search-container label {
+  font-weight: 700;
+  color: #2c3e50;
+  text-transform: uppercase;
+}
+
+.search-container input {
+  padding: 10px 15px;
+  border: 2px solid #4CAF50;
+  border-radius: 10px;
+  font-size: 16px;
+  width: 280px;
+  background: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-container input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+/* District Filter */
+.filter-container select {
+  padding: 6px 10px;
+  border: 2px solid #4CAF50;
+  border-radius: 8px;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  max-width: 200px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.filter-container select:hover,
+.filter-container select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+/* Table Container */
+.table-container {
+  flex-grow: 1;
+  max-height: 65vh;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Table Styling */
+.unit-details-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Sticky Column Headers */
+.unit-details-table thead {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(135deg, #4CAF50, #2E7D32);
+  color: white;
+  z-index: 10;
+}
+
+.unit-details-table th {
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-bottom: 2px solid #FFD700;
+  border-right: 1px solid #FFD700;
+  white-space: nowrap; /* Headers stay single-line */
+}
+
+/* Remove right border from last header */
+.unit-details-table th:last-child {
+  border-right: none;
+}
+
+/* Table Body Scroll */
+.unit-details-table tbody {
+  display: block;
+  max-height: calc(65vh - 70px);
+  overflow-y: auto;
+}
+
+.unit-details-table thead,
+.unit-details-table tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.unit-details-table td {
+  padding: 12px 16px;
+  text-align: left;
+  vertical-align: middle;
+  height: 60px;
+  border-bottom: 1px solid #FFD700;
+  border-right: 1px solid #FFD700;
+  word-wrap: break-word; /* Allow text wrapping */
+  overflow: visible; /* Ensure content isn’t cut off */
+  max-width: 0; /* Helps with fixed layout distribution */
+}
+
+/* Remove right border from last cell */
+.unit-details-table td:last-child {
+  border-right: none;
+}
+
+/* Hover Tooltip for Long Data */
+.unit-details-table td:hover::after {
+  /* content: attr(data-fulltext); Requires data-fulltext attribute in JSX */
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: normal;
+  max-width: 300px;
+  z-index: 20;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.unit-details-table td:hover::after {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Row Hover Effect */
+.unit-details-table tr:hover {
+  background: linear-gradient(90deg, rgba(76, 175, 80, 0.1), rgba(0, 123, 255, 0.1));
+}
+
+/* Owner Photo */
+.owner-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #4CAF50;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.owner-photo:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
+}
+
+/* Pagination Controls */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #4CAF50, #2E7D32);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.pagination button:hover {
+  background: linear-gradient(135deg, #66BB6A, #388E3C);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(76, 175, 80, 0.4);
+}
+
+.pagination button:disabled {
+  background: #d0d0d0;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* No Data Message */
+.no-data {
+  text-align: center;
+  font-size: 18px;
+  color: #777;
+  padding: 20px;
+  font-style: italic;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .popup-content {
+    width: 92%;
+    max-width: 1000px;
+    padding: 15px;
+  }
+
+  .popup-header {
+    font-size: 16px;
+  }
+
+  .tree-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .filter-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .search-container input {
+    width: 100%;
+    max-width: 300px;
+    font-size: 14px;
+  }
+
+  .filter-container select {
+    width: 100%;
+    max-width: 250px;
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .unit-details-table {
+    font-size: 13px;
+  }
+
+  .unit-details-table th,
+  .unit-details-table td {
+    padding: 10px;
+  }
+
+  .unit-details-table tbody {
+    max-height: calc(65vh - 60px);
+  }
+
+  .owner-photo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .pagination button {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .popup-header {
+    font-size: 14px;
+  }
+
+  .tree-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .unit-details-table th,
+  .unit-details-table td {
+    padding: 8px;
+  }
+}

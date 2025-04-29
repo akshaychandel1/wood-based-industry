@@ -1,0 +1,62 @@
+/* Main container */
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Centering the login form container */
+  .main-login {
+    max-width: 600px;
+    width: 100%;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Row setup for content */
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Column styling */
+  .col-sm-12 {
+    text-align: left;
+  }
+  
+  /* Heading and text formatting */
+  h4 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .contac {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  /* Styling for bolded text */
+  .contac b {
+    font-weight: bold;
+  }
+  
+  /* Styling for the email */
+  .contac a {
+    color: #1a73e8;
+    text-decoration: none;
+  }
+  
+  .contac a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Additional styling for the email container */
+  .contac {
+    font-size: 16px;
+    color: #333;
+  }

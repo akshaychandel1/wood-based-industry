@@ -1,0 +1,112 @@
+/* NAVIGATION */
+.navbar {
+  background: linear-gradient(135deg, #4CAF50, #2E7D32); /* Modern green gradient */
+  padding: 12px 0;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 1000;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center; /* Align items to the start */
+  align-items: center;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu li {
+  position: relative;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav-menu li a::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #ffffff, #d1ffcc);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-menu li a:hover {
+  background: linear-gradient(145deg, #388E3C, #1B5E20); /* Darker green on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  color: #f9fafb;
+}
+
+.nav-menu li a:hover::before {
+  transform: scaleX(1);
+}
+
+/* Active Link Styling */
+.nav-menu li a.active {
+  background: linear-gradient(145deg, #388E3C, #1B5E20); /* Darker green for active link */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  color: #f9fafb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 0;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-menu li a {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile Menu Toggle */
+.navbar-toggle {
+  display: none;
+  background: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+}

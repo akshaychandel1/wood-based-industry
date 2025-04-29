@@ -1,0 +1,45 @@
+/* ABOUT PAGE */
+.about-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ABOUT SECTION */
+.about-section {
+    flex: 1; /* Allow the section to grow and take up available space */
+    padding: 40px 20px; /* Add padding for spacing */
+    background-color: #f9fafb; /* Light background color */
+    color: #333; /* Dark text color for contrast */
+    line-height: 1.6; /* Improved readability */
+    margin-bottom: auto; /* Push the footer to the bottom */
+}
+
+.container {
+    max-width: 1200px; /* Limit width for better readability */
+    margin: auto; /* Center align */
+    text-align: justify; /* Justify text for a clean look */
+}
+
+.section-title {
+    font-size: 28px; /* Larger font size for the title */
+    font-weight: bold;
+    color: #2c3e50; /* Darker color for emphasis */
+    text-align: center; /* Center-align the title */
+    margin-bottom: 20px; /* Add space below the title */
+}
+
+.about-section p {
+    font-size: 16px; /* Standard font size for paragraphs */
+    margin-bottom: 15px; /* Space between paragraphs */
+    color: #555; /* Slightly lighter text color */
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 24px; /* Smaller font size for mobile */
+    }
+    .about-section p {
+        font-size: 14px; /* Smaller font size for mobile */
+    }
+}

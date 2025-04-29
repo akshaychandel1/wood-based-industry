@@ -1,0 +1,148 @@
+/* HEADER */
+.topheader {
+    position: relative;
+    background: url('/headerfinal.webp') top/cover;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Change to space-between */
+    width: 100%;
+    z-index: 10;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.3); /* Increase brightness */
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove any padding */
+}
+
+/* Background Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+    z-index: 1;
+}
+
+/* Header Row */
+.header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Change to space-between */
+    width: 100%;
+    max-width: 1300px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+    padding: 0 20px; /* Add padding to the sides */
+}
+
+/* Logo */
+.logo img {
+    max-width: 120px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+    border-radius: 10px;
+}
+.logo img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* Title */
+.site-title {
+    text-align: center;
+    flex-grow: 1;
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove any padding */
+    
+}
+.site-title h1 {
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    letter-spacing: 1px;
+    color: #f9faf9;
+    text-shadow: 2px 2px 8px rgba(6, 6, 6, 0.974);
+}
+.site-title h4 {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    color: #f0f0f0;
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove any padding */
+}
+
+/* Header Images */
+.header-images {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove any padding */
+}
+.header-images img {
+    max-height: 80px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    border-radius: 8px;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+.header-images img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* Enlarge the .img_1 logo */
+.header-images .img_1 {
+    /* max-height: 100px; Increase the height */
+    width : 140px;
+}
+
+/* Ensure Other Sections are Visible */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9fafb;
+}
+
+.main-content {
+    margin-top: 20px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-row {
+        flex-direction: row;
+        align-items: center;
+    }
+    .site-title h1 {
+        font-size: 10px;
+    }
+    .site-title h4 {
+        font-size: 6px;
+    }
+    .header-images {
+        flex-direction: row;
+        gap: 10px;
+
+    }
+    .header-images img {
+        max-width: 30px;
+        
+    }
+    .logo img {
+        max-width: 30px;
+    }
+}

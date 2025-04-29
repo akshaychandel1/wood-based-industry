@@ -1,0 +1,187 @@
+/* Main Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f9f9f9;
+  /* overflow: h */
+}
+
+/* Content Wrapper (Flexbox Layout) */
+.content-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+/* Notifications Section (70% width) */
+.notifications {
+  flex: 7;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Right Column (Tree Census & Instructions) - 30% */
+.right-column {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tree-census-content,
+.instructions-content {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styles */
+.notification-table,
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.notification-table th,
+.table th {
+  color: white;
+  background: linear-gradient(135deg, #388E3C, #2e6b32); /* Gradient header */
+  font-weight: bold;
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.notification-table td,
+.table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+/* Small Font Size for Date Column */
+.small-text {
+  font-size: 12px;
+  color: gray;
+}
+
+/* Container with Limited Rows */
+.notifications .table-wrapper,
+.tree-census-content .table-wrapper,
+.instructions-content .table-wrapper {
+  max-height: 300px; /* Roughly 5 rows */
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+/* Enable scrolling when "More" is clicked */
+.show-more .table-wrapper {
+  max-height: none;
+  overflow-y: scroll;
+}
+
+/* Base Button Styles */
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px; /* Rounded edges */
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+}
+
+/* Button Hover Effect */
+.button:hover {
+  transform: translateY(-2px); /* Slight lift */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); /* Enhanced shadow */
+}
+
+/* Button Active Effect */
+.button:active {
+  transform: translateY(1px); /* Pressed down */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); /* Reduced shadow */
+}
+
+/* More Button */
+.more-button {
+  background: linear-gradient(45deg, #388E3C, #66BB6A); /* Gradient */
+  margin-top: 15px;
+  width: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block; /* Center the button */
+}
+
+.more-button:hover {
+  background: linear-gradient(45deg, #2e6b32, #4caf50); /* Darker gradient */
+}
+
+/* Add Button */
+.add-button {
+  background: linear-gradient(45deg, #388E3C, #66BB6A); /* Green gradient */
+}
+
+.add-button:hover {
+  background: linear-gradient(45deg, #2e6b32, #4caf50); /* Darker green */
+}
+
+/* Edit Button */
+.edit-button {
+  background: linear-gradient(45deg, #ffa500, #ffca28); /* Orange gradient */
+  margin-right: 8px;
+}
+
+.edit-button:hover {
+  background: linear-gradient(45deg, #e69500, #ffb300); /* Darker orange */
+}
+
+/* Save Button */
+.save-button {
+  background: linear-gradient(45deg, #28a745, #4caf50); /* Green gradient */
+  margin-right: 8px;
+}
+
+.save-button:hover {
+  background: linear-gradient(45deg, #218838, #388e3c); /* Darker green */
+}
+
+/* Delete Button */
+.delete-button {
+  background: linear-gradient(45deg, #dc3545, #ef5350); /* Red gradient */
+}
+
+.delete-button:hover {
+  background: linear-gradient(45deg, #c82333, #d81b60); /* Darker red */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  .notifications,
+  .right-column {
+    flex: 1;
+  }
+
+  .button {
+    padding: 8px 16px; /* Slightly smaller on mobile */
+    font-size: 12px;
+  }
+}

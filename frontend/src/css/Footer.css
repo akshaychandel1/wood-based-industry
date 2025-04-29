@@ -1,0 +1,108 @@
+/* FOOTER */
+footer {
+  background: linear-gradient(135deg, #191612, #2c2c2c); /* Dark gradient background */
+  color: white;
+  padding: 20px 0; /* Vertical padding */
+  text-align: center; /* Center-align content */
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  width: 100%;
+  margin-top: auto; 
+  margin-bottom: 0;
+}
+
+.footer-container {
+  max-width: 1200px; /* Limit width for better readability */
+  margin: auto; /* Center align */
+  display: flex;
+  justify-content: space-between; /* Space between elements */
+  align-items: center;
+  gap: 10px; /* Space between elements */
+}
+
+.footer-text {
+  text-align: center;
+}
+
+footer p {
+  margin: 5px 0; /* Reduce spacing between paragraphs */
+  font-size: 14px; /* Smaller font size */
+  line-height: 1.5; /* Improved readability */
+  color: #d1d1d1; /* Lighter text color for contrast */
+}
+
+footer a {
+  color: #4db6ac; /* Teal color for links */
+  text-decoration: none;
+  font-weight: 600; /* Bold links */
+  transition: color 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+footer a:hover {
+  color: #82e9de; /* Brighter teal on hover */
+  text-decoration: underline; /* Add underline for emphasis */
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 15px; /* Space between icons */
+  margin-top: 10px; /* Add space above social icons */
+}
+
+.footer-social-icons a {
+  color: white; /* White icons */
+  font-size: 18px; /* Icon size */
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth animations */
+}
+
+.footer-social-icons a:hover {
+  transform: scale(1.2); /* Slightly enlarge on hover */
+  color: #4db6ac; /* Change color to teal on hover */
+}
+
+/* Footer Logos */
+.footer-logos {
+  display: flex;
+  gap: 20px; /* Space between logos */
+}
+
+.footer-logos.left {
+  justify-content: flex-start;
+  width: 250px;
+}
+
+.footer-logos.right {
+  justify-content: flex-end;
+  width: 250px;
+}
+
+.footer-logo {
+  max-height: 50px; /* Adjust the height of the logos */
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; /* Smooth animations */
+  filter: brightness(1.3);
+}
+
+.footer-logo:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+  filter: brightness(1.5); /* Increase brightness on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer p {
+    font-size: 12px;
+  }
+
+  .footer-logos {
+    justify-content: center;
+    gap: 10px; /* Reduce space between logos */
+  }
+
+  .footer-logo {
+    max-height: 40px; /* Adjust the height of the logos for mobile */
+  }
+}

@@ -1,0 +1,306 @@
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  line-height: 1.6;
+}
+
+.row {
+  gap: 15px; /* Adds spacing between elements in a row */
+}
+
+/* Header Styles */
+header {
+  background-color: #4CAF50;
+  padding: 15px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Full width */
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Ensures links wrap on smaller screens */
+}
+
+nav ul li {
+  margin-right: 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffeb3b; /* Bright yellow hover effect */
+  text-decoration: none;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #4CAF50;
+  text-align: center;
+  padding: 15px 20px;
+  width: 100%; /* Full width */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Styles */
+.title {
+  font-size: 24px;
+  color: #4CAF50;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 20px; /* Smaller font size for mobile */
+  }
+}
+
+/* Form Styles */
+select.form-control,
+input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+  select.form-control,
+  input[type="submit"] {
+    font-size: 14px; /* Smaller font size for mobile */
+  }
+}
+
+/* Table Styles */
+.usertb {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow-x: auto; /* Enables horizontal scrolling for tables */
+}
+
+.usertb th,
+.usertb td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+  min-width: 150px; /* Ensures columns don't collapse too much */
+}
+
+.usertb th {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+}
+
+.usertb td {
+  background-color: white;
+  font-size: 14px;
+}
+
+.usertb tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.usertb td a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.usertb td a:hover {
+  color: #45a049;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .usertb th,
+  .usertb td {
+    font-size: 12px; /* Smaller font size for mobile */
+    padding: 8px;
+  }
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #45a049;
+}
+
+.text-right {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .text-right {
+    text-align: center; /* Center align buttons on mobile */
+  }
+
+  .btn-primary {
+    font-size: 12px; /* Smaller font size for mobile */
+    padding: 8px 16px;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 15px;
+  }
+}
+
+/* Specific Styles for Existing Unit Registration, Unit Relocation, Ownership Change */
+.existing-unit-registration,
+.unit-relocation,
+.ownership-change {
+  margin-top: 20px;
+}
+
+.existing-unit-registration .text-right,
+.unit-relocation .text-right,
+.ownership-change .text-right {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.existing-unit-registration table,
+.unit-relocation table,
+.ownership-change table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow-x: auto; /* Enables horizontal scrolling for tables */
+}
+
+.existing-unit-registration table th,
+.existing-unit-registration table td,
+.unit-relocation table th,
+.unit-relocation table td,
+.ownership-change table th,
+.ownership-change table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+  min-width: 150px; /* Ensures columns don't collapse too much */
+}
+
+.existing-unit-registration table th,
+.unit-relocation table th,
+.ownership-change table th {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+}
+
+.existing-unit-registration table td,
+.unit-relocation table td,
+.ownership-change table td {
+  background-color: white;
+  font-size: 14px;
+}
+
+.existing-unit-registration table tr:nth-child(even),
+.unit-relocation table tr:nth-child(even),
+.ownership-change table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.existing-unit-registration table td a,
+.unit-relocation table td a,
+.ownership-change table td a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.existing-unit-registration table td a:hover,
+.unit-relocation table td a:hover,
+.ownership-change table td a:hover {
+  color: #45a049;
+  text-decoration: underline;
+}
+
+/* Media Queries for Existing Unit Registration, Unit Relocation, Ownership Change */
+@media (max-width: 768px) {
+  .existing-unit-registration .text-right,
+  .unit-relocation .text-right,
+  .ownership-change .text-right {
+    text-align: center; /* Center align buttons on mobile */
+  }
+
+  .existing-unit-registration table th,
+  .existing-unit-registration table td,
+  .unit-relocation table th,
+  .unit-relocation table td,
+  .ownership-change table th,
+  .ownership-change table td {
+    font-size: 12px; /* Smaller font size for mobile */
+    padding: 8px;
+  }
+
+  .existing-unit-registration table,
+  .unit-relocation table,
+  .ownership-change table {
+    font-size: 12px; /* Reduce overall table font size */
+  }
+}
