@@ -12,7 +12,7 @@ const dashboardRoutes = require("./routes/dashboardRoutes"); // Punjab
 const haryanaRoutes = require("./routes/haryanaRoutes"); // Haryana
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 10000;
 const path = require("path");
 
 // Serve static files
@@ -20,9 +20,31 @@ app.use("/TreeCensusUploads", express.static(path.join(__dirname, "TreeCensusUpl
 app.use("/NotificationUploads", express.static(path.join(__dirname, "NotificationUploads")));
 app.use("/InstructionUploads", express.static("InstructionUploads"));
 
+// // Optimized CORS Middleware
+// const corsOptions = {
+//   origin: "http://localhost:5173", // Ensure this matches your frontend URL
+//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//   allowedHeaders: "Content-Type, Authorization",
+//   credentials: true,
+// };
+
+// app.use(cors(corsOptions));
+
+// // Handle Preflight Requests (CORS Fix for OPTIONS Requests)
+// app.options("*", (req, res) => {
+//   res.set({
+//     "Access-Control-Allow-Origin": "http://localhost:5173",
+//     "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+//     "Access-Control-Allow-Headers": "Content-Type, Authorization",
+//     "Access-Control-Allow-Credentials": "true",
+//   });
+//   res.status(204).end();
+// });
+
+
 // Optimized CORS Middleware
 const corsOptions = {
-  origin: "http://localhost:5173", // Ensure this matches your frontend URL
+  origin: process.env.FRONTEND_URL || "http://localhost:5173",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   allowedHeaders: "Content-Type, Authorization",
   credentials: true,
@@ -30,16 +52,12 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-// Handle Preflight Requests (CORS Fix for OPTIONS Requests)
-app.options("*", (req, res) => {
-  res.set({
-    "Access-Control-Allow-Origin": "http://localhost:5173",
-    "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type, Authorization",
-    "Access-Control-Allow-Credentials": "true",
-  });
-  res.status(204).end();
-});
+// Optional: Preflight handler (if needed)
+app.options("*", cors(corsOptions));
+
+
+
+
 
 // Body Parser (Improved Performance)
 app.use(express.json({ limit: "1mb" })); // Limit body size for efficiency
